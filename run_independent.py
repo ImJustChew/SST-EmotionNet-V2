@@ -135,7 +135,7 @@ def run():
 
 
     model = sst_model.sst_emotionnet(input_width=input_width, specInput_length=specInput_length, temInput_length=temInput_length,
-                                    depth_spec=depth_spec, depth_tem=depth_tem, gr_spec=gr_spec, gr_tem=gr_tem, nb_dense_block=nb_dense_block, nb_class=nb_class, dense_dropout=0.2)
+                                    depth_spec=depth_spec, depth_tem=depth_tem, gr_spec=gr_spec, gr_tem=gr_tem, nb_dense_block=nb_dense_block, nb_class=nb_class, dense_dropout=0.3)
     # model = multi_gpu_model(model, gpus=2)
     adam = tf.keras.optimizers.Adam(
         lr=lr, beta_1=0.9, beta_2=0.999, epsilon=1e-8)

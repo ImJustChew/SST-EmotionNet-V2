@@ -7,13 +7,9 @@ import keras.backend as K
 import numpy as np
 import tensorflow as tf
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from keras.models import load_model
-from keras.utils import multi_gpu_model
 from keras.utils.np_utils import to_categorical
 
-
 from model import model as sst_model
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 train_specInput_root_path = None
 train_tempInput_root_path = None
@@ -84,7 +80,9 @@ def read_config(config_path):
 def run():
     config = tf.compat.v1.ConfigProto()
     config.gpu_options.allow_growth = True
-    tf.compat.v1.keras.backend.set_session(tf.compat.v1.Session(config=config))
+    sess = tf.compat.v1.Session()
+
+    K.set_session(tf.compat.v1.Session(config=config))
 
     K.set_image_data_format('channels_last')
     K.set_learning_phase(1)

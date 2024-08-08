@@ -47,8 +47,13 @@ Finally `run_independent.py` is a subject independent model.
 
 # Results
 run_independent.py (without normalization): 
-dropout 0.5: acc: 0.5
-dropout 0.3: acc: 0.8
-dropout 0.1: accuracy 0.8777777552604675
-
-remove last dropout layer: accuracy 0.8444444537162781, dropout 0.1
+PCA=40, T=5min, Chn=all
+| Conditions | Accuracy |
+|------------|----------|
+| Dropout 0.5 | 0.5 |
+| Dropout 0.3 | 0.8 |
+| Dropout 0.1 | 0.5666666626930237 |
+| Dropout 0.1 | 0.8777777552604675 |
+| Dropout 0.1, no internal dropout | 0.8444444537162781 |
+| Dropout 0.1, no internal dropout | 0.5333333611488342 |
+| Dropout 0.3 | 0.7777777910232544 |
